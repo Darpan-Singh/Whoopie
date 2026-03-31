@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Legacy Material palette (required by theme attrs) -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +8,24 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Whoopie Brand Design System -->
+    <color name="whoopie_bg">#080E1A</color>
+    <color name="whoopie_surface">#0F1929</color>
+    <color name="whoopie_card">#1C2537</color>
+    <color name="whoopie_card_elevated">#243045</color>
+    <color name="whoopie_divider">#1E3050</color>
+
+    <color name="whoopie_primary">#4F8EFF</color>
+    <color name="whoopie_primary_dark">#1A3A8F</color>
+    <color name="whoopie_cyan">#00E5FF</color>
+    <color name="whoopie_gold">#FFB300</color>
+    <color name="whoopie_success">#00C853</color>
+    <color name="whoopie_warning">#FF9800</color>
+    <color name="whoopie_error">#FF5252</color>
+
+    <color name="whoopie_text_primary">#FFFFFF</color>
+    <color name="whoopie_text_secondary">#8A9BB0</color>
+    <color name="whoopie_text_muted">#4A5568</color>
+    <color name="whoopie_text_accent">#4F8EFF</color>
 </resources>

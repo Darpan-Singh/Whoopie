@@ -30,32 +30,50 @@ struct DashboardView: View {
                         .ignoresSafeArea()
 
                     VStack {
+                        // Top label bar
+                        HStack {
+                            Image(systemName: "faceid")
+                                .foregroundColor(Color(red: 0.31, green: 0.557, blue: 1.0))
+                            Text("Face Check-In")
+                                .font(.system(size: 15, weight: .semibold))
+                                .foregroundColor(.white)
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                        .background(.black.opacity(0.6))
+                        .clipShape(Capsule())
+                        .padding(.top, 20)
+
                         Spacer()
 
-                        VStack(spacing: 10) {
+                        VStack(spacing: 12) {
                             if detector.faceDetected {
                                 ProgressView(value: detector.progress)
                                     .progressViewStyle(.linear)
-                                    .tint(.green)
-                                    .frame(width: 220)
+                                    .tint(Color(red: 0.31, green: 0.557, blue: 1.0))
+                                    .frame(width: 240)
 
-                                Text(detector.progress >= 1.0 ? "✅ Face Captured!" : "Hold still…")
-                                    .font(.headline)
+                                Text(detector.progress >= 1.0
+                                     ? "Check-In Complete"
+                                     : "Hold still — scanning…")
+                                    .font(.system(size: 15, weight: .medium))
                                     .foregroundColor(.white)
                             } else {
-                                Text("Position your face in frame")
-                                    .font(.headline)
+                                Text("Position your face within the frame")
+                                    .font(.system(size: 15, weight: .medium))
                                     .foregroundColor(.white)
+                                    .multilineTextAlignment(.center)
                             }
                         }
-                        .padding()
-                        .background(.black.opacity(0.55))
-                        .clipShape(RoundedRectangle(cornerRadius: 14))
-                        .padding(.bottom, 48)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 16)
+                        .background(.black.opacity(0.6))
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .padding(.bottom, 52)
                     }
                 }
             }
-            .navigationTitle("Face Check-In")
+            .navigationTitle("Check-In")
             .onAppear { detector.start() }
             .onDisappear { detector.stop() }
         }

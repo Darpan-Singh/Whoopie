@@ -60,16 +60,16 @@ class orgainserfragment : Fragment() {
     @SuppressLint("SetTextI18n")
     private fun bindData(org: Organiser) {
         tvName.text = org.name
-        tvEmail.text = "📧 ${org.email}"
-        tvPhone.text = "📞 ${org.phone}"
-        tvAddress.text = "📍 ${org.address}"
-        tvWebsite.text = "🌐 ${org.website}"
+        tvEmail.text = org.email
+        tvPhone.text = org.phone
+        tvAddress.text = org.address
+        tvWebsite.text = org.website
         tvDescription.text = org.description
 
-        tvEvents.text = "Total Events: ${org.totalEvents}"
-        tvActiveEvents.text = "Active Events: ${org.activeEvents}"
-        tvRevenue.text = "Revenue: ₹${org.totalRevenue}"
+        tvEvents.text = "${org.totalEvents}"
+        tvActiveEvents.text = "${org.activeEvents}"
+        tvRevenue.text = if (org.totalRevenue > 0) "₹${org.totalRevenue}" else "₹0"
 
-        tvStatus.text = "Status: ${org.status.uppercase()}"
+        tvStatus.text = org.status.uppercase()
     }
 }

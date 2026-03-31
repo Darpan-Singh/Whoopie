@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0D0D0D"
+    android:background="@color/whoopie_bg"
     android:fillViewport="true">
 
     <LinearLayout
@@ -12,85 +13,150 @@
         android:orientation="vertical"
         android:gravity="center"
         android:padding="32dp"
-        android:minHeight="600dp">
+        android:minHeight="640dp">
 
+        <!-- Top spacer -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Brand mark -->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Thrillathon"
-            android:textColor="#FFFFFF"
-            android:textSize="32sp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:text="W"
+            android:textColor="@color/white"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            android:gravity="center"
+            android:background="@drawable/bg_brand_mark"
+            android:layout_marginBottom="20dp" />
 
+        <!-- App name -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign in to continue"
-            android:textColor="#AAAAAA"
+            android:text="Whoopie"
+            android:textColor="@color/whoopie_text_primary"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.02"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Tagline -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_tagline"
+            android:textColor="@color/whoopie_text_secondary"
             android:textSize="14sp"
-            android:layout_marginBottom="40dp"/>
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Username"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etUsername"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#888888"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:passwordToggleEnabled="true"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_marginBottom="8dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#888888"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/tvError"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Invalid username or password"
-            android:textColor="#FF5252"
-            android:textSize="13sp"
-            android:visibility="gone"
-            android:layout_marginBottom="16dp"/>
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Login"
-            android:textSize="16sp"
-            android:backgroundTint="#4CAF50"
-            android:layout_marginTop="8dp"/>
-
+        <!-- Portal label -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Demo: admin / admin123"
-            android:textColor="#555555"
-            android:textSize="12sp"
-            android:layout_marginTop="24dp"/>
+            android:text="@string/login_portal_label"
+            android:textColor="@color/whoopie_primary"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.12"
+            android:layout_marginBottom="40dp" />
+
+        <!-- Form card -->
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="16dp"
+            card_view:cardElevation="0dp"
+            card_view:cardBackgroundColor="@color/whoopie_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/whoopie_divider"
+                    app:boxBackgroundColor="@color/whoopie_surface"
+                    app:hintTextColor="@color/whoopie_text_secondary"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:textColor="@color/whoopie_text_primary"
+                        android:textColorHint="@color/whoopie_text_muted" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/whoopie_divider"
+                    app:boxBackgroundColor="@color/whoopie_surface"
+                    app:hintTextColor="@color/whoopie_text_secondary"
+                    app:passwordToggleEnabled="true"
+                    android:layout_marginBottom="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:textColor="@color/whoopie_text_primary"
+                        android:textColorHint="@color/whoopie_text_muted" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tvError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_error"
+                    android:textColor="@color/whoopie_error"
+                    android:textSize="13sp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="@string/login_button"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:backgroundTint="@color/whoopie_primary"
+                    android:layout_marginTop="8dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Bottom spacer -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Powered-by footer -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Powered by Whoopie · Facial Ticketing Platform"
+            android:textColor="@color/whoopie_text_muted"
+            android:textSize="11sp"
+            android:layout_marginTop="24dp" />
 
     </LinearLayout>
 

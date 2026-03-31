@@ -19,7 +19,11 @@ struct EventListView: View {
                 NavigationLink(destination: EventDetailView(event: event)) {
                     EventRow(event: event)
                 }
+                .listRowBackground(Color(red: 0.11, green: 0.145, blue: 0.216))
+                .listRowSeparatorTint(Color(white: 0.12))
             }
+            .scrollContentBackground(.hidden)
+            .background(Color(red: 0.031, green: 0.055, blue: 0.102))
             .navigationTitle("Events")
             .onAppear(perform: loadEvents)
         }
@@ -42,23 +46,36 @@ struct EventListView: View {
 private struct EventRow: View {
     let event: EventItem
 
+    private var isActive: Bool { event.status.lowercased() == "active" }
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(event.eventName)
-                .font(.headline)
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Text(event.eventName)
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(.white)
+                Spacer()
+                Text(event.status.uppercased())
+                    .font(.system(size: 10, weight: .bold))
+                    .foregroundColor(isActive
+                        ? Color(red: 0.0, green: 0.784, blue: 0.325)
+                        : Color(red: 1.0, green: 0.596, blue: 0.0))
+                    .padding(.horizontal, 9)
+                    .padding(.vertical, 3)
+                    .background(
+                        Capsule().fill(isActive
+                            ? Color(red: 0.0, green: 0.784, blue: 0.325).opacity(0.12)
+                            : Color(red: 1.0, green: 0.596, blue: 0.0).opacity(0.12))
+                    )
+            }
             Text(event.date)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            Text(event.status)
-                .font(.caption.bold())
-                .foregroundColor(event.status == "Active" ? .green : .orange)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 2)
-                .background(
-                    Capsule().fill(event.status == "Active"
-                        ? Color.green.opacity(0.12)
-                        : Color.orange.opacity(0.12))
-                )
+                .font(.system(size: 13))
+                .foregroundColor(Color(red: 0.541, green: 0.608, blue: 0.690))
+            if !event.location.isEmpty {
+                Text(event.location)
+                    .font(.system(size: 13))
+                    .foregroundColor(Color(red: 0.541, green: 0.608, blue: 0.690))
+            }
         }
         .padding(.vertical, 4)
     }

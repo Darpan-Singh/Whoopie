@@ -1,16 +1,14 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.Client" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
+<resources>
+    <!-- Whoopie dark theme — same palette as light, no overrides needed -->
+    <style name="Theme.Client" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/whoopie_primary</item>
+        <item name="colorPrimaryVariant">@color/whoopie_primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/whoopie_cyan</item>
+        <item name="colorSecondaryVariant">@color/whoopie_primary_dark</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@color/whoopie_bg</item>
+        <item name="android:navigationBarColor">@color/whoopie_bg</item>
+        <item name="android:windowBackground">@color/whoopie_bg</item>
     </style>
 </resources>

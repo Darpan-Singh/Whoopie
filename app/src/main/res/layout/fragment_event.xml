@@ -4,4 +4,6 @@
     android:id="@+id/eventRecycler"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/whoopie_bg"
+    android:paddingBottom="12dp"
     android:nestedScrollingEnabled="false"/>

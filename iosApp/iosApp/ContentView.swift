@@ -7,24 +7,26 @@ struct ContentView: View {
         TabView {
             EventListView()
                 .tabItem {
-                    Label("Events", systemImage: "list.bullet.rectangle")
+                    Label("Events", systemImage: "ticket")
                 }
 
             DashboardView()
                 .tabItem {
-                    Label("Face Scan", systemImage: "faceid")
+                    Label("Check-In", systemImage: "faceid")
                 }
 
             OrganiserView()
                 .tabItem {
-                    Label("Organiser", systemImage: "person.crop.circle")
+                    Label("Account", systemImage: "building.2")
                 }
 
             ProfileView(isLoggedIn: $isLoggedIn)
                 .tabItem {
-                    Label("Profile", systemImage: "person.circle")
+                    Label("Settings", systemImage: "gearshape")
                 }
         }
+        .tint(Color(red: 0.31, green: 0.557, blue: 1.0))
+        .preferredColorScheme(.dark)
     }
 }
 
@@ -34,15 +36,19 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack {
             List {
+                Section("Whoopie") {
+                    LabeledContent("Platform", value: "Facial Ticketing")
+                    LabeledContent("Version", value: "1.0")
+                }
                 Section {
                     Button(role: .destructive) {
                         isLoggedIn = false
                     } label: {
-                        Label("Log Out", systemImage: "rectangle.portrait.and.arrow.right")
+                        Label("Sign Out", systemImage: "rectangle.portrait.and.arrow.right")
                     }
                 }
             }
-            .navigationTitle("Profile")
+            .navigationTitle("Settings")
         }
     }
 }
