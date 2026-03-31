@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Thrillathon / Tech — deep blue -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:startColor="#1A3A8F"
+        android:centerColor="#0D2460"
+        android:endColor="#070E1A"
+        android:angle="270" />
+</shape>
