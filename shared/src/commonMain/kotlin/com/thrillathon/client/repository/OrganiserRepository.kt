@@ -13,8 +13,8 @@ class OrganiserRepository {
         contactPerson = "Nishant",
         status = "active",
         totalRevenue = 0,
-        totalEvents = 0,
-        activeEvents = 0,
+        totalEvents = 3,
+        activeEvents = 2,
         joinDate = "2025-11-11"
     )
 }
