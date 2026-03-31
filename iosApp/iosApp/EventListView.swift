@@ -1,4 +1,5 @@
 import SwiftUI
+import Shared
 
 struct EventItem: Identifiable {
     let id: String
@@ -9,25 +10,31 @@ struct EventItem: Identifiable {
     let location: String
 }
 
-// Mirrors EventRepository.kt in the shared module
-private let sampleEvents: [EventItem] = [
-    EventItem(id: "1", eventName: "Thrillathon 2026", date: "27 March 2026",
-              status: "Active", description: "India's biggest tech + event fest", location: "Mumbai"),
-    EventItem(id: "2", eventName: "Music Night", date: "5 April 2026",
-              status: "Active", description: "Live DJ + Concert", location: "Bangalore"),
-    EventItem(id: "3", eventName: "Startup Expo", date: "12 April 2026",
-              status: "Upcoming", description: "Startup showcase event", location: "Delhi")
-]
-
 struct EventListView: View {
+    @State private var events: [EventItem] = []
+
     var body: some View {
         NavigationStack {
-            List(sampleEvents) { event in
+            List(events) { event in
                 NavigationLink(destination: EventDetailView(event: event)) {
                     EventRow(event: event)
                 }
             }
             .navigationTitle("Events")
+            .onAppear(perform: loadEvents)
+        }
+    }
+
+    private func loadEvents() {
+        events = EventRepository().getEvents().map { e in
+            EventItem(
+                id: e.id,
+                eventName: e.eventName,
+                date: e.date,
+                status: e.status,
+                description: e.description_,
+                location: e.location
+            )
         }
     }
 }
