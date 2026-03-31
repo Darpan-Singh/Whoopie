@@ -1,6 +1,0 @@
-Target dependency graph (3 targets)
-Target 'iosApp' in project 'iosApp'
-➜ Implicit dependency on target 'Pods-iosApp' in project 'Pods' via file 'Pods_iosApp.framework' in build phase 'Link Binary'
-Target 'Pods-iosApp' in project 'Pods'
-➜ Explicit dependency on target 'Shared' in project 'Pods'
-Target 'Shared' in project 'Pods' (no dependencies)
