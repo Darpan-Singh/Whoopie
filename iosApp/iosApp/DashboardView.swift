@@ -9,32 +9,50 @@ struct DashboardView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                CameraPreview(session: detector.session)
-                    .ignoresSafeArea()
-
-                VStack {
-                    Spacer()
-
-                    VStack(spacing: 10) {
-                        if detector.faceDetected {
-                            ProgressView(value: detector.progress)
-                                .progressViewStyle(.linear)
-                                .tint(.green)
-                                .frame(width: 220)
-
-                            Text(detector.progress >= 1.0 ? "✅ Face Captured!" : "Hold still…")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                        } else {
-                            Text("Position your face in frame")
-                                .font(.headline)
-                                .foregroundColor(.white)
+                if let error = detector.cameraError {
+                    VStack(spacing: 16) {
+                        Image(systemName: "camera.slash")
+                            .font(.system(size: 52))
+                            .foregroundColor(.secondary)
+                        Text(error)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.secondary)
+                            .padding(.horizontal, 32)
+                        Button("Open Settings") {
+                            if let url = URL(string: UIApplication.openSettingsURLString) {
+                                UIApplication.shared.open(url)
+                            }
                         }
+                        .buttonStyle(.borderedProminent)
                     }
-                    .padding()
-                    .background(.black.opacity(0.55))
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
-                    .padding(.bottom, 48)
+                } else {
+                    CameraPreview(session: detector.session)
+                        .ignoresSafeArea()
+
+                    VStack {
+                        Spacer()
+
+                        VStack(spacing: 10) {
+                            if detector.faceDetected {
+                                ProgressView(value: detector.progress)
+                                    .progressViewStyle(.linear)
+                                    .tint(.green)
+                                    .frame(width: 220)
+
+                                Text(detector.progress >= 1.0 ? "✅ Face Captured!" : "Hold still…")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                            } else {
+                                Text("Position your face in frame")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                            }
+                        }
+                        .padding()
+                        .background(.black.opacity(0.55))
+                        .clipShape(RoundedRectangle(cornerRadius: 14))
+                        .padding(.bottom, 48)
+                    }
                 }
             }
             .navigationTitle("Face Check-In")
@@ -51,26 +69,59 @@ final class FaceDetector: NSObject, ObservableObject, AVCaptureVideoDataOutputSa
 
     @Published var faceDetected = false
     @Published var progress: Double = 0.0
+    @Published var cameraError: String? = nil
 
     private var progressTimer: Timer?
     private var captured = false
 
     func start() {
         guard !session.isRunning else { return }
+
+        let status = AVCaptureDevice.authorizationStatus(for: .video)
+        if status == .denied || status == .restricted {
+            DispatchQueue.main.async {
+                self.cameraError = "Camera access denied. Enable it in Settings."
+            }
+            return
+        }
+
+        if status == .notDetermined {
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
+                if granted { self?.configureSession() }
+                else {
+                    DispatchQueue.main.async {
+                        self?.cameraError = "Camera access denied. Enable it in Settings."
+                    }
+                }
+            }
+            return
+        }
+
+        configureSession()
+    }
+
+    private func configureSession() {
         session.sessionPreset = .high
 
-        guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front),
-              let input = try? AVCaptureDeviceInput(device: device) else { return }
+        guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else {
+            DispatchQueue.main.async { self.cameraError = "No front camera found on this device." }
+            return
+        }
 
-        let output = AVCaptureVideoDataOutput()
-        output.setSampleBufferDelegate(self, queue: DispatchQueue(label: "whoopie.face.queue"))
+        do {
+            let input = try AVCaptureDeviceInput(device: device)
+            let output = AVCaptureVideoDataOutput()
+            output.setSampleBufferDelegate(self, queue: DispatchQueue(label: "whoopie.face.queue"))
 
-        session.beginConfiguration()
-        if session.canAddInput(input)  { session.addInput(input) }
-        if session.canAddOutput(output) { session.addOutput(output) }
-        session.commitConfiguration()
+            session.beginConfiguration()
+            if session.canAddInput(input)   { session.addInput(input) }
+            if session.canAddOutput(output) { session.addOutput(output) }
+            session.commitConfiguration()
 
-        DispatchQueue.global(qos: .userInitiated).async { self.session.startRunning() }
+            DispatchQueue.global(qos: .userInitiated).async { self.session.startRunning() }
+        } catch {
+            DispatchQueue.main.async { self.cameraError = "Camera setup failed: \(error.localizedDescription)" }
+        }
     }
 
     func stop() {

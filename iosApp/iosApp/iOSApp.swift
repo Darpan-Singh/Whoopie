@@ -2,12 +2,12 @@ import SwiftUI
 
 @main
 struct iOSApp: App {
-    @State private var isLoggedIn = false
+    @AppStorage("isLoggedIn") private var isLoggedIn = false
 
     var body: some Scene {
         WindowGroup {
             if isLoggedIn {
-                ContentView()
+                ContentView(isLoggedIn: $isLoggedIn)
             } else {
                 LoginView(isLoggedIn: $isLoggedIn)
             }
