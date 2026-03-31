@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>11</integer>
+	<key>logs</key>
+	<dict>
+		<key>9D395AD4-C526-4C98-86BB-5972211C42E7</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>9D395AD4-C526-4C98-86BB-5972211C42E7.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>2</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>iosApp project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>iosApp</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>0</integer>
+			<key>signature</key>
+			<string>Archiving workspace iosApp with scheme iosApp</string>
+			<key>timeStartedRecording</key>
+			<real>796679377.67388594</real>
+			<key>timeStoppedRecording</key>
+			<real>796679388.64046896</real>
+			<key>title</key>
+			<string>Archiving workspace iosApp with scheme iosApp</string>
+			<key>uniqueIdentifier</key>
+			<string>9D395AD4-C526-4C98-86BB-5972211C42E7</string>
+		</dict>
+		<key>A5D7EBAF-1727-4F87-966C-01C861A4D228</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A5D7EBAF-1727-4F87-966C-01C861A4D228.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>2</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>iosApp project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>iosApp</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>0</integer>
+			<key>signature</key>
+			<string>Building workspace iosApp with scheme iosApp and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>796679336.77627504</real>
+			<key>timeStoppedRecording</key>
+			<real>796679362.70169401</real>
+			<key>title</key>
+			<string>Building workspace iosApp with scheme iosApp and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>A5D7EBAF-1727-4F87-966C-01C861A4D228</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

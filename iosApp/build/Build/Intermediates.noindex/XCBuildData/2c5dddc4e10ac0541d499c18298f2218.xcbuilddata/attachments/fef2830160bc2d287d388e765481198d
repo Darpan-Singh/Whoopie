@@ -1,0 +1,79 @@
+{
+  "" : {
+    "diagnostics" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iosApp-primary.dia",
+    "emit-module-dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iosApp-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iosApp-primary-emit-module.dia",
+    "pch" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iosApp-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iosApp-primary.swiftdeps"
+  },
+  "/Users/mrmad/adminthrill/Whoopie/iosApp/iosApp/ContentView.swift" : {
+    "const-values" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/mrmad/adminthrill/Whoopie/iosApp/iosApp/DashboardView.swift" : {
+    "const-values" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/DashboardView.swiftconstvalues",
+    "dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/DashboardView.d",
+    "diagnostics" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/DashboardView.dia",
+    "index-unit-output-path" : "/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/DashboardView.o",
+    "llvm-bc" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/DashboardView.bc",
+    "object" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/DashboardView.o",
+    "swift-dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/DashboardView.swiftdeps",
+    "swiftmodule" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/DashboardView~partial.swiftmodule"
+  },
+  "/Users/mrmad/adminthrill/Whoopie/iosApp/iosApp/EventDetailView.swift" : {
+    "const-values" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventDetailView.swiftconstvalues",
+    "dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventDetailView.d",
+    "diagnostics" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventDetailView.dia",
+    "index-unit-output-path" : "/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventDetailView.o",
+    "llvm-bc" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventDetailView.bc",
+    "object" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventDetailView.o",
+    "swift-dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventDetailView.swiftdeps",
+    "swiftmodule" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventDetailView~partial.swiftmodule"
+  },
+  "/Users/mrmad/adminthrill/Whoopie/iosApp/iosApp/EventListView.swift" : {
+    "const-values" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventListView.swiftconstvalues",
+    "dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventListView.d",
+    "diagnostics" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventListView.dia",
+    "index-unit-output-path" : "/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventListView.o",
+    "llvm-bc" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventListView.bc",
+    "object" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventListView.o",
+    "swift-dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventListView.swiftdeps",
+    "swiftmodule" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/EventListView~partial.swiftmodule"
+  },
+  "/Users/mrmad/adminthrill/Whoopie/iosApp/iosApp/LoginView.swift" : {
+    "const-values" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/LoginView.swiftconstvalues",
+    "dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/LoginView.d",
+    "diagnostics" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/LoginView.dia",
+    "index-unit-output-path" : "/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/LoginView.o",
+    "llvm-bc" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/LoginView.bc",
+    "object" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/LoginView.o",
+    "swift-dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/LoginView.swiftdeps",
+    "swiftmodule" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/LoginView~partial.swiftmodule"
+  },
+  "/Users/mrmad/adminthrill/Whoopie/iosApp/iosApp/OrganiserView.swift" : {
+    "const-values" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/OrganiserView.swiftconstvalues",
+    "dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/OrganiserView.d",
+    "diagnostics" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/OrganiserView.dia",
+    "index-unit-output-path" : "/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/OrganiserView.o",
+    "llvm-bc" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/OrganiserView.bc",
+    "object" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/OrganiserView.o",
+    "swift-dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/OrganiserView.swiftdeps",
+    "swiftmodule" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/OrganiserView~partial.swiftmodule"
+  },
+  "/Users/mrmad/adminthrill/Whoopie/iosApp/iosApp/iOSApp.swift" : {
+    "const-values" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iOSApp.swiftconstvalues",
+    "dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iOSApp.d",
+    "diagnostics" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iOSApp.dia",
+    "index-unit-output-path" : "/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iOSApp.o",
+    "llvm-bc" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iOSApp.bc",
+    "object" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iOSApp.o",
+    "swift-dependencies" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iOSApp.swiftdeps",
+    "swiftmodule" : "/Users/mrmad/adminthrill/Whoopie/iosApp/build/Build/Intermediates.noindex/iosApp.build/Debug-iphoneos/iosApp.build/Objects-normal/arm64/iOSApp~partial.swiftmodule"
+  }
+}
