@@ -3,7 +3,13 @@
     "allow": [
       "Bash(gh auth:*)",
       "Bash(git --version)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(find /c/Users/01dar/Whoopie-a7a05257d306ad51d5bf6b00931949b713e5e753/iosApp -type f -name *.swift -o -name *.pbxproj -o -name *.xcodeproj -o -name *.plist -o -name *.podspec -o -name Podfile*)",
+      "Bash(grep -E \"\\\\.\\(kt|xml\\)$\")",
+      "Bash(xargs grep:*)",
+      "Bash(find /c/Users/01dar/Whoopie-a7a05257d306ad51d5bf6b00931949b713e5e753 -type f -name *.xcodeproj -o -name *.xcworkspace -o -name Podfile -o -name Podfile.lock)",
+      "Bash(xargs ls:*)",
+      "Bash(find /c/Users/01dar/Whoopie-a7a05257d306ad51d5bf6b00931949b713e5e753 -type f \\\\\\(-name *.sh -o -name *.gradle \\\\\\))"
     ]
   }
 }

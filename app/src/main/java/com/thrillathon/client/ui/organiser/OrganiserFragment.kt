@@ -1,4 +1,4 @@
-package com.thrillathon.client.ui.orgainser
+package com.thrillathon.client.ui.organiser
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -10,9 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.thrillathon.client.R
 import com.thrillathon.client.model.Organiser
-class orgainserfragment : Fragment() {
 
-    private val viewModel: organiserviewmodel by viewModels()
+class OrganiserFragment : Fragment() {
+
+    private val viewModel: OrganiserViewModel by viewModels()
 
     private lateinit var tvName: TextView
     private lateinit var tvEmail: TextView

@@ -1,4 +1,5 @@
-package com.thrillathon.client.ui.orgainser
+package com.thrillathon.client.model
 
-// Re-export from shared module so existing references keep working
-typealias Event = com.thrillathon.client.model.Event
+// This file was causing a recursive type alias error. 
+// Since Event is already defined in the shared module under the same package, 
+// this typealias is unnecessary.

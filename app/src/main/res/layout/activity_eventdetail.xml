@@ -131,7 +131,25 @@
                 android:text="—"
                 android:textColor="@color/whoopie_text_secondary"
                 android:textSize="14sp"
-                android:lineSpacingMultiplier="1.5" />
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Seating Arrangement Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seating Arrangement"
+                android:textColor="@color/whoopie_text_muted"
+                android:textSize="11sp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.10"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/seatingContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

@@ -1,4 +1,5 @@
-package com.thrillathon.client.ui.orgainser
+package com.thrillathon.client.model
 
-// Re-export from shared module so existing references keep working
-typealias Organiser = com.thrillathon.client.model.Organiser
+// This file was causing a recursive type alias error.
+// Since Organiser is already defined in the shared module under the same package,
+// this file is unnecessary if we want to use the shared definition directly.

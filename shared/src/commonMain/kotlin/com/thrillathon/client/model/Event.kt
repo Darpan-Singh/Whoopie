@@ -6,5 +6,14 @@ data class Event(
     val date: String,
     val status: String,
     val description: String,
-    val location: String = ""
+    val location: String = "",
+    val seatings: List<Seating> = emptyList()
+)
+
+data class Seating(
+    val seatType: String,
+    val price: Double,
+    val totalSeats: Int,
+    val seatsSold: Int,
+    val isActive: Boolean
 )
