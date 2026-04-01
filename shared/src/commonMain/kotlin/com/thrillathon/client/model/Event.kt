@@ -14,6 +14,7 @@ data class Seating(
     val seatType: String,
     val price: Double,
     val totalSeats: Int,
+    val lockedSeats: Int = 0,
     val seatsSold: Int,
     val isActive: Boolean
 )

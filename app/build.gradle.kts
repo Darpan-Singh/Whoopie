@@ -57,5 +57,7 @@ dependencies {
     implementation ("com.google.mlkit:face-mesh-detection:16.0.0-beta3")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation(project(":shared"))
+    implementation ("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
 }

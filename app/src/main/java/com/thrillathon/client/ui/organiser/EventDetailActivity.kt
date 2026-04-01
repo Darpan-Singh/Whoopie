@@ -1,7 +1,9 @@
 package com.thrillathon.client.ui.organiser
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +19,7 @@ class EventDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eventdetail)
 
+        val eventId = intent.getStringExtra("event_id") ?: ""
         val name = intent.getStringExtra("name")
         val date = intent.getStringExtra("date")
         val status = intent.getStringExtra("status")
@@ -35,6 +38,12 @@ class EventDetailActivity : AppCompatActivity() {
             val seatings = parseSeatings(seatingsJson)
             displaySeatings(seatingContainer, seatings)
         }
+
+        findViewById<Button>(R.id.button).setOnClickListener {
+            val checkinIntent = Intent(this, FaceCheckInActivity::class.java)
+            checkinIntent.putExtra("event_id", eventId)
+            startActivity(checkinIntent)
+        }
     }
 
     private fun parseSeatings(json: String): List<Seating> {
@@ -48,6 +57,7 @@ class EventDetailActivity : AppCompatActivity() {
                         seatType = obj.getString("seatType"),
                         price = obj.getDouble("price"),
                         totalSeats = obj.getInt("totalSeats"),
+                        lockedSeats = obj.optInt("lockedSeats", 0),
                         seatsSold = obj.getInt("seatsSold"),
                         isActive = obj.getBoolean("isActive")
                     )
@@ -74,7 +84,7 @@ class EventDetailActivity : AppCompatActivity() {
 
         for (seating in seatings) {
             val view = layoutInflater.inflate(R.layout.item_seating, container, false)
-            
+
             val tvType = view.findViewById<TextView>(R.id.tvSeatType)
             val tvPrice = view.findViewById<TextView>(R.id.tvPrice)
             val tvAvailability = view.findViewById<TextView>(R.id.tvAvailability)
@@ -83,14 +93,17 @@ class EventDetailActivity : AppCompatActivity() {
 
             tvType.text = seating.seatType.replaceFirstChar { it.uppercase() }
             tvPrice.text = if (seating.price <= 0) "FREE" else "₹${seating.price}"
-            
-            val sold = seating.seatsSold
+
             val total = seating.totalSeats
-            tvAvailability.text = "$sold / $total seats sold"
-            
-            val percentage = if (total > 0) (sold * 100 / total) else 0
-            tvPercent.text = "$percentage%"
-            progress.progress = percentage
+            val sold = seating.seatsSold
+            val locked = seating.lockedSeats
+            val remaining = total - sold - locked
+
+            tvAvailability.text = "$sold sold · $remaining available · $locked locked"
+
+            val soldPercent = if (total > 0) (sold * 100 / total) else 0
+            tvPercent.text = "$soldPercent%"
+            progress.progress = soldPercent
 
             container.addView(view)
         }

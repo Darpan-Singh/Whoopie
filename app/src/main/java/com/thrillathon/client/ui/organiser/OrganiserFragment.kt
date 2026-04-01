@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.thrillathon.client.R
@@ -25,6 +27,8 @@ class OrganiserFragment : Fragment() {
     private lateinit var tvActiveEvents: TextView
     private lateinit var tvRevenue: TextView
     private lateinit var tvStatus: TextView
+    private lateinit var progressBar: ProgressBar
+    private lateinit var contentRoot: View
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,7 +41,6 @@ class OrganiserFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // ✅ Bind Views
         tvName = view.findViewById(R.id.tvName)
         tvEmail = view.findViewById(R.id.tvEmail)
         tvPhone = view.findViewById(R.id.tvPhone)
@@ -48,24 +51,35 @@ class OrganiserFragment : Fragment() {
         tvActiveEvents = view.findViewById(R.id.tvActiveEvents)
         tvRevenue = view.findViewById(R.id.tvRevenue)
         tvStatus = view.findViewById(R.id.tvStatus)
+        progressBar = view.findViewById(R.id.progressBar)
+        contentRoot = view.findViewById(R.id.contentRoot)
 
-        // 🔥 Observe data
+        viewModel.loading.observe(viewLifecycleOwner) { isLoading ->
+            progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+            contentRoot.visibility = if (isLoading) View.INVISIBLE else View.VISIBLE
+        }
+
+        viewModel.error.observe(viewLifecycleOwner) { message ->
+            if (!message.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+            }
+        }
+
         viewModel.organiser.observe(viewLifecycleOwner) {
             bindData(it)
         }
 
-        // 🔥 Load data
         viewModel.loadOrganizer()
     }
 
     @SuppressLint("SetTextI18n")
     private fun bindData(org: Organiser) {
         tvName.text = org.name
-        tvEmail.text = org.email
-        tvPhone.text = org.phone
-        tvAddress.text = org.address
-        tvWebsite.text = org.website
-        tvDescription.text = org.description
+        tvEmail.text = org.email.ifEmpty { "—" }
+        tvPhone.text = org.phone.ifEmpty { "—" }
+        tvAddress.text = org.address.ifEmpty { "—" }
+        tvWebsite.text = org.website.ifEmpty { "—" }
+        tvDescription.text = org.description.ifEmpty { "No description provided." }
 
         tvEvents.text = "${org.totalEvents}"
         tvActiveEvents.text = "${org.activeEvents}"
