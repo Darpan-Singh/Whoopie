@@ -37,6 +37,8 @@ class FaceCheckInActivity : AppCompatActivity() {
     private lateinit var uploadingOverlay: FrameLayout
     private lateinit var resultCard: LinearLayout
     private lateinit var tvResultMessage: TextView
+    private lateinit var tvResponseRaw: TextView
+    private lateinit var tvColorBadge: TextView
     private lateinit var btnScanAgain: Button
     private lateinit var btnBack: ImageButton
 
@@ -45,7 +47,7 @@ class FaceCheckInActivity : AppCompatActivity() {
     private lateinit var cameraExecutor: ExecutorService
 
     private val client = OkHttpClient()
-    private val BASE_URL = "https://backendmongo-tau.vercel.app"
+    private val BASE_URL = "https://api-sigma-five-15.vercel.app"
 
     private var isProcessing = false
     private var isCaptured = false
@@ -63,6 +65,8 @@ class FaceCheckInActivity : AppCompatActivity() {
         uploadingOverlay = findViewById(R.id.uploadingOverlay)
         resultCard = findViewById(R.id.resultCard)
         tvResultMessage = findViewById(R.id.tvResultMessage)
+        tvResponseRaw = findViewById(R.id.tvResponseRaw)
+        tvColorBadge = findViewById(R.id.tvColorBadge)
         btnScanAgain = findViewById(R.id.btnScanAgain)
         btnBack = findViewById(R.id.btnBack)
 
@@ -219,7 +223,7 @@ class FaceCheckInActivity : AppCompatActivity() {
                     .build()
 
                 val request = Request.Builder()
-                    .url("$BASE_URL/api/face-verify/verify")
+                    .url("$BASE_URL/api/face-verify")
                     .addHeader("Authorization", "Bearer $token")
                     .post(requestBody)
                     .build()
@@ -233,12 +237,12 @@ class FaceCheckInActivity : AppCompatActivity() {
 
                 withContext(Dispatchers.Main) {
                     showUploading(false)
-                    showResult(color, message)
+                    showResult(color, message, body)
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     showUploading(false)
-                    showResult("black", "Network error: ${e.message}")
+                    showResult("black", "Network error: ${e.message}", e.toString())
                 }
             } finally {
                 imageFile.delete()
@@ -247,24 +251,37 @@ class FaceCheckInActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun showResult(color: String, message: String) {
+    private fun showResult(color: String, message: String, rawBody: String = "") {
         tvInstruction.visibility = View.GONE
         resultCard.visibility = View.VISIBLE
         tvResultMessage.text = message
 
+        val accentColor = when (color.lowercase()) {
+            "green" -> Color.parseColor("#00C853")
+            "red"   -> Color.parseColor("#FF5252")
+            else    -> Color.parseColor("#555555")
+        }
         val bgColor = when (color.lowercase()) {
             "green" -> Color.parseColor("#1A4A2E")
             "red"   -> Color.parseColor("#4A1A1A")
             else    -> Color.parseColor("#1C1C1C")
         }
-        val borderColor = when (color.lowercase()) {
-            "green" -> Color.parseColor("#00C853")
-            "red"   -> Color.parseColor("#FF5252")
-            else    -> Color.parseColor("#555555")
-        }
 
         resultCard.setBackgroundColor(bgColor)
-        tvResultMessage.setTextColor(borderColor)
+        tvResultMessage.setTextColor(accentColor)
+
+        // Color badge
+        tvColorBadge.text = "● ${color.uppercase()}"
+        tvColorBadge.setTextColor(accentColor)
+
+        // Raw API response
+        val formatted = try {
+            JSONObject(rawBody).toString(2)
+        } catch (e: Exception) {
+            rawBody
+        }
+        tvResponseRaw.text = formatted
+        tvResponseRaw.visibility = if (formatted.isNotBlank()) View.VISIBLE else View.GONE
     }
 
     private fun showUploading(show: Boolean) {

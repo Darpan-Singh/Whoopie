@@ -66,7 +66,7 @@ class FaceOverlayView(context: Context, attrs: AttributeSet) : View(context, att
     private var lastCenterX = 0f
     private var lastCenterY = 0f
     private var stableFrames = 0
-    private val STABLE_THRESHOLD = 8
+    private val STABLE_THRESHOLD = 2
 
     // 🔄 Animations
     private var scanX = 0f
@@ -170,8 +170,8 @@ class FaceOverlayView(context: Context, attrs: AttributeSet) : View(context, att
                     return
                 }
 
-                // 🔥 Smooth easing
-                progress += (360f - progress) * 0.08f
+                // Fast linear fill — completes in ~400ms at 16ms/frame
+                progress += 15f
 
                 if (progress >= 359f) {
                     progress = 360f

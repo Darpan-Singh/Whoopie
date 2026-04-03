@@ -73,6 +73,20 @@
         android:visibility="gone">
 
         <TextView
+            android:id="@+id/tvColorBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="6dp"
+            android:layout_marginBottom="12dp"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:letterSpacing="0.1" />
+
+        <TextView
             android:id="@+id/tvResultMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,6 +95,19 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tvResponseRaw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#AAFFFFFF"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:gravity="start"
+            android:background="#22FFFFFF"
+            android:padding="10dp"
             android:layout_marginBottom="20dp" />
 
         <Button
