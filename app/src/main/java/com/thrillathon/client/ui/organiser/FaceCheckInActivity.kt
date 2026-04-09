@@ -47,7 +47,7 @@ class FaceCheckInActivity : AppCompatActivity() {
     private lateinit var cameraExecutor: ExecutorService
 
     private val client = OkHttpClient()
-    private val BASE_URL = "https://api-sigma-five-15.vercel.app"
+    private val BASE_URL = "https://api-ashy-three-56.vercel.app"
 
     private var isProcessing = false
     private var isCaptured = false
@@ -223,7 +223,7 @@ class FaceCheckInActivity : AppCompatActivity() {
                     .build()
 
                 val request = Request.Builder()
-                    .url("$BASE_URL/api/face-verify")
+                    .url("$BASE_URL/api/face-verify/final")
                     .addHeader("Authorization", "Bearer $token")
                     .post(requestBody)
                     .build()
